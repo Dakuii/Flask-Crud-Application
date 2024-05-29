@@ -1,0 +1,134 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Navbar styles */
+nav {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 0;
+}
+
+nav .logo h1 {
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #495057;
+}
+
+input[type="number"][name="price"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #495057;
+}
+
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+}
+
+/* Button styles inside table */
+.delete-btn, .edit-btn {
+    padding: 8px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #dc3545;
+    margin-right: 5px;
+}
+
+.delete-btn:hover, .edit-btn:hover {
+    background-color: #a61c2a;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppCrud/Modifier-Produit</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home" class="nav-link">Accueil</a></li>
+            <li><a href="/">Produits</a></li>
+            <li><a href="add" class="nav-link">Ajouter</a></li>
+            <li><a href="/logout">Déconnexion</a></li>
+        </ul>
+    </nav>
+    
+    <h2>Modifier Produit :</h2>
+    <div id="edit-form">
+        <form action="/edit/{{ item['id'] }}" method="post">
+            <input type="text" name="title" placeholder="Nom" value="{{ item['title'] }}" required>
+            <textarea name="description" placeholder="Description">{{ item['description'] }}</textarea>
+            <input type="number" step="0.01" name="price" placeholder="Prix" value="{{ item['price'] }}" required>  <!-- Ajout du champ prix -->
+            <button type="submit">Enregistrer Changement</button>
+        </form>
+    </div>
+</body>
+</html>

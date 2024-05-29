@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppCrud/Produits</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .active-link {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home" class="nav-link">Accueil</a></li>
+            <li><a href="/" class="nav-link">Produits</a></li>
+            <li><a href="add">Ajouter</a></li>
+            <li><a href="/logout">Déconnexion</a></li>  
+        </ul>
+    </nav>
+
+    <h2>Liste Des Produits :</h2>
+
+    <div id="items">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th> <!-- Ajout de l'en-tête pour le prix -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item['title'] }}</td>
+                    <td>{{ item['description'] }}</td>
+                    <td>{{ item['price'] }} DH</td> <!-- Ajout du champ prix -->
+                    <td>
+                        <form action="/delete/{{ item['id'] }}" method="post">
+                            <button type="submit" class="delete-btn">Supprimer</button>
+                        </form>
+                        <form action="/edit/{{ item['id'] }}" method="get">
+                            <button type="submit" class="edit-btn">Modifier</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var produitsLink = document.querySelector('.nav-link[href="/"]');
+        if (window.location.pathname === '/') {
+            produitsLink.classList.add('active-link');
+        }
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

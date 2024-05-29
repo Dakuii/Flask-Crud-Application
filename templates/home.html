@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .active-link {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home" class="nav-link">Accueil</a></li>
+            <li><a href="/" class="nav-link">Produits</a></li>
+            <li><a href="/add" class="nav-link">Ajouter</a></li>
+            <li><a href="/logout" class="nav-link">Déconnexion</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        {% if username %}
+            <h1>Bienvenue, {{ username }}!</h1>
+        {% endif %}
+        <p>Bienvenue sur votre page d'accueil. Vous pouvez accéder à la liste des produits, ajouter de nouveaux produits ou vous déconnecter en utilisant la navigation ci-dessus.</p>
+    </div>
+
+    <script>
+        var accueilLink = document.querySelector('.nav-link[href="/home"]');
+        if (window.location.pathname === '/home') {
+            accueilLink.classList.add('active-link');
+        }
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
